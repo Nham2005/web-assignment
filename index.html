@@ -12,35 +12,32 @@
 
 <script>
 
-// 1. Khai báo biến
-let fullName = "nguyen van binh";   // không dấu
+let fullName = "trinh thi nham";  
 let studentId = "27A4041234";
 
-// 2. Tách tên
+// Tách tên
 let parts = fullName.split(" ");
 
-let firstName = parts[parts.length - 1]; // binh
-let lastName = parts[0]; // nguyen
-let middleName = parts[1]; // van
+let firstName = parts[parts.length - 1]; 
+let lastName = parts[0]; 
+let middleName = parts[1];
 
-// 3. Tạo email
+// Tạo email
 let email = firstName + lastName[0] + middleName[0] + "." + studentId.toLowerCase() + "@hvnh.edu.vn";
 
-// → binhnv.27a4041234@hvnh.edu.vn
+// Xử lý mã sinh viên
+let coursePeriod = studentId.substring(0,2); 
+let faculty = studentId.charAt(2);
 
-// 4. Xử lý mã sinh viên
-let coursePeriod = studentId.substring(0,2); // 27
-let faculty = studentId.charAt(2); // A
-
-// 5. Tính tổng 4 số cuối
-let last4 = studentId.slice(-4); // 1234
+// Tính tổng 4 số cuối
+let last4 = studentId.slice(-4); 
 
 let sum = 0;
 for(let i = 0; i < last4.length; i++){
   sum += parseInt(last4[i]);
 }
 
-// 6. In kết quả
+// In kết quả
 document.getElementById("result").innerHTML =
   "Xin chào " + fullName +
   ", bạn là sinh viên khóa " + coursePeriod +
